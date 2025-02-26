@@ -3177,6 +3177,9 @@ export class Create {
 				}
 				game.resume();
 			}
+			game.broadcastAll(function () {
+				if (lib.config.background_speak) game.playAudio(`../audio/effect/gameStart`);
+			});
 			button.delete();
 			bar.delete();
 			shareButton.delete();
